@@ -1,5 +1,5 @@
 const CustomerValidation = {
-    userId: {
+    userName: {
       rules: [
         {
           test: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,

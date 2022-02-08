@@ -6,6 +6,9 @@ import "./Login.css"
 import React, { Component } from 'react';
 import RedirectMessage from './RedirectMessage';
 import CustomerValidation from './CustomerValidation';
+import {connect} from 'react-redux'
+import axios from "axios";
+import {loginAccount} from '../../Action/SchoolAction'
 
  class Login extends Component{
     
@@ -15,7 +18,7 @@ import CustomerValidation from './CustomerValidation';
 
         this.state={
               login:{
-                userId:"",
+                userName:"",
                 password:"",
               },
               redirect:false,
@@ -83,12 +86,22 @@ import CustomerValidation from './CustomerValidation';
         let value = event.target.value;
         this.setState({login:{...this.state.login,[nam]:value}});
         console.log(this.state.login);
+       
         this.updateValidators(nam,value);
     }
 
 
-    checkLogin = () =>{
-        this.setState({redirect:true})
+    checkLogin = async() =>{
+        
+        console.log(this.state.login);
+        const result =  await axios.post(`http://localhost:8777/api/login`,this.state.login).catch((err)=>alert(err.response.data));
+        if(result.data){
+        this.props.login(result.data);
+        this.setState({redirect:true});
+        localStorage.setItem("isLoggedIn","true");
+        localStorage.setItem("userName",this.state.login.userName);
+        localStorage.setItem("password",this.state.login.password);
+        }
     }
     
     
@@ -103,9 +116,9 @@ import CustomerValidation from './CustomerValidation';
                         <h3>LOG IN</h3>
                         <div className="form-group">
                             <label>USERNAME</label>
-                            <input type="text" className="form-control" placeholder="Enter UserName" name="userId" onChange={(event) => this.handleChange(event)} />
+                            <input type="text" className="form-control" placeholder="Enter UserName" name="userName" onChange={(event) => this.handleChange(event)} />
                         </div>
-                        {this.displayValidationErrors('userId')}
+                        {this.displayValidationErrors('userName')}
                         <div className="form-group">
                             <label>PASSWORD</label>
                             <input type="password" className="form-control" placeholder="Enter Password" name="password" onChange={(event)=> this.handleChange(event)} />
@@ -137,12 +150,12 @@ const errorStyle = {
     color: 'white'
 };
 
-// const mapDispatchToProps = dispatch => {
-//     return{
-//     login: logindetails => dispatch(loginAccount(logindetails)),
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return{
+    login: logindetails => dispatch(loginAccount(logindetails)),
+    }
+}
 
 
 
-export default  Login;
+export default  connect(null,mapDispatchToProps)(Login);

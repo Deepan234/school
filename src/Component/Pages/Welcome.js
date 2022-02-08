@@ -10,7 +10,7 @@ export default function Welcome() {
      <Container>
          <br/>
          <br/>
-         <Link to="/addsearchform">
+         <Link to="/schoollisting">
          <Button>
             LOOKUP A SCHOOL YOU ARE INTERESTED IN
          </Button>

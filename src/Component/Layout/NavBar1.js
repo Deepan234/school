@@ -22,7 +22,16 @@ export default function NavBar1() {
                 <Link
                   className="nav-link"
                   to="/"
-                ><button className="btns">
+                ><button className="btns"
+                  onClick={
+                    () => {
+                      localStorage.setItem("isLoggedIn","false");
+                      localStorage.setItem("userName","");
+                      localStorage.setItem("password",""); 
+                    }
+                  }
+                
+                >
                   LOGOUT
                   </button>
                 </Link>
