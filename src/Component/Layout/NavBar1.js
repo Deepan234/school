@@ -37,9 +37,9 @@ export default function NavBar1() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to="/profile" className="nav-link">
+                <Link to="/sugesstionadmin" className="nav-link">
                   <button className="btns">
-                    PROFILE
+                    SUGESSTION
                   </button>
                 </Link>
               </li>

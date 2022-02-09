@@ -4,6 +4,9 @@ import ViewSchool from "../Component/Pages/ViewSchool";
 import AddSchoolPage from "../Component/Pages/AddSchoolPage";
 import UpdatePage from "../Component/Pages/UpdatePage";
 import {DeleteSchool} from "../Component/Pages/DeleteSchool";
+import { DeleteSuggestionPages } from "../Component/Pages/DeleteSuggestionPages";
+import AddSuggestionPage from "../Component/Pages/AddSuggestionPage";
+import ViewSuggestion from "../Component/Pages/ViewSuggestion";
 
 
 const CustomModal = (props) => {
@@ -38,7 +41,14 @@ const CustomModal = (props) => {
           case "delete":
             return <DeleteSchool setModalOpen={props.setModalOpen} id={props.id} />
 
+          case "deletesuggestions":
+            return <DeleteSuggestionPages setModalOpen={props.setModalOpen} id={props.id}/>
 
+          case "addsuggestions":
+            return <AddSuggestionPage setModalOpen={props.setModalOpen}/>
+
+          case "viewsuggestion":
+            return <ViewSuggestion setModalOpen={props.setModalOpen} id={props.id}/>
             
 
           default:

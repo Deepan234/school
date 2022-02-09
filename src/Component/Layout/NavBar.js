@@ -27,9 +27,9 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to="/profile" className="nav-link">
+                <Link to="/sugesstion" className="nav-link">
                   <button className="btns">
-                    PROFILE
+                    SUGGESTION
                   </button>
                 </Link>
               </li>

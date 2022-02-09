@@ -47,3 +47,25 @@ export const addSchool = (school) => {
         payload:school
     }
 }
+
+
+export const suggestionAction = (suggestion) => {
+    return{
+        type:ActionTypes.SUGGESTION_LISTING,
+        payload:suggestion
+    }
+}
+
+export const suggestionActionId = (suggestion) => {
+    return{
+        type:ActionTypes.SUGGESTION_ID,
+        payload:suggestion
+    }
+}
+
+export const addSuggestion = (suggestion) => {
+    return{
+        type:ActionTypes.ADD_SUGGESTION,
+        payload:suggestion
+    }
+}

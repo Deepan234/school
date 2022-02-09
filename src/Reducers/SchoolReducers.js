@@ -5,7 +5,10 @@ const initialState = {
     school: [],
     schools: [],
     user:[],
-    deleteschool:[]
+    deleteschool:[],
+    suggestion:[],
+    isLoggedIn:false,
+    sugg:[]
 }
 
 const SchoolReducers = (state = initialState, action) => {
@@ -32,6 +35,7 @@ const SchoolReducers = (state = initialState, action) => {
         case ActionTypes.LOGIN:
 
              newState.user = action.payload;
+             newState.isLoggedIn = true;
              break;
 
 
@@ -49,6 +53,21 @@ const SchoolReducers = (state = initialState, action) => {
         case ActionTypes.ADD_SCHOOL:
 
         newState.school = action.payload;
+        break;
+
+        case ActionTypes.SUGGESTION_LISTING:
+
+        newState.suggestion = action.payload;
+        break;
+
+        case ActionTypes.ADD_SUGGESTION:
+
+        newState.suggestion =action.payload;
+        break;
+
+        case ActionTypes.SUGGESTION_ID:
+
+        newState.sugg = action.payload;
         break;
 
         default:
