@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import './NavBar.css'
+import Img1 from '../Pages/Image/logo.jpeg'
 
 export default function NavBar() {
     return (
@@ -8,13 +9,18 @@ export default function NavBar() {
           <div className="collapse navbar-collapse">
             <div>
             <Link to="/" className="navbar-logo">
-                  SCHOOL
+              SCHOOL LISTING  SYSTEM
             </Link>
             </div>
             <ul className="naviblue">
               <li className="navigreen">
                 <Link className="nav-link" to="/">
                   HOME
+                </Link>
+              </li>
+              <li className='navigreen'>
+                <Link className='nav-link' to="/contact">
+                  CONTACT
                 </Link>
               </li>
               <li className="nav-item">

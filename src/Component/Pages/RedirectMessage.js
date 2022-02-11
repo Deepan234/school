@@ -6,13 +6,10 @@ export default function RedirectMessage(props) {
   let navigate = useNavigate();
 
   if (props.redirect){
-      navigate('/admin');
-
+      navigate('/welcomeadmin');
   return (<div></div>);
   }
   else{
-      return(
-          <div></div>
-      )
+      return(<div></div>);
   }
 }

@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
-    width: 8rem;
+    width: 18rem;
     font-weight: bold;
 
 }
@@ -37,7 +37,7 @@
     width: 70vh;
     justify-content: flex-end;
     margin-right: 1rem;
-    margin-left: 45rem;
+    margin-left: 36rem;
 }
 
 .navigreen{

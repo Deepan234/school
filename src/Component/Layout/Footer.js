@@ -26,15 +26,15 @@ export default function Footer () {
         <footer class="bg-dark text-center text-white">
           <div class="container p-2">
             <section class="mb-2">
-              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/Capgemini/" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/Cognizant/" role="button"
               ><FacebookIcon></FacebookIcon></a>
-              <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/Capgemini?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" role="button">
+              <a class="btn btn-outline-light btn-floating m-1" href="https://mobile.twitter.com/Cognizant?" role="button">
               <TwitterIcon></TwitterIcon></a>
-              <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/capgeminiindia/" role="button">
+              <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/cognizant?utm_medium=copy_link" role="button">
               <InstagramIcon></InstagramIcon></a>
-              <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/company/capgemini" role="button"> 
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/company/cognizant/" role="button"> 
               <LinkedInIcon></LinkedInIcon></a>
-              <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Mummadimadhuri/PaymentWallet" role="button">
+              <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/sandeshbhoir123" role="button">
               <GitHubIcon></GitHubIcon></a>
             </section>
             <section class="mb-1">

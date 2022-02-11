@@ -9,7 +9,7 @@ export default function NavBar1() {
           <div className="collapse navbar-collapse">
             <div>
             <Link to="/" className="navbar-logo">
-                  SCHOOL
+                  SCHOOL LISTING SYSTEM
             </Link>
             </div>
             <ul className="naviblue">

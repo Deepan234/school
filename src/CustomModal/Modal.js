@@ -7,11 +7,13 @@ import {DeleteSchool} from "../Component/Pages/DeleteSchool";
 import { DeleteSuggestionPages } from "../Component/Pages/DeleteSuggestionPages";
 import AddSuggestionPage from "../Component/Pages/AddSuggestionPage";
 import ViewSuggestion from "../Component/Pages/ViewSuggestion";
-
+import { Container } from "@material-ui/core";
+import "../Component/Pages/modal.css"
 
 const CustomModal = (props) => {
   console.log(props.id);
   return (
+    <div className="container-bg">
     <Modal isOpen={props.status} ariaHideApp={false}>
       <div className="titleCloseBtn ">
         <button
@@ -56,6 +58,7 @@ const CustomModal = (props) => {
         }
       })()}</div>
     </Modal>
+    </div>
   );
 };
 

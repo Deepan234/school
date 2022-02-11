@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Container } from '@material-ui/core';
 import { getAllSchool } from '../../Action/SchoolAction';
 import Modal from '../../CustomModal/Modal';
+import { Button } from '@material-ui/core';
+
 
 export default function AdminPage() {
 
@@ -77,7 +79,7 @@ export default function AdminPage() {
   return (<div>
     <NavBar1 />
     <Container maxWidth="lg" style={{
-      backgroundImage: "url(https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmVzc2lvbmFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60)",
+      backgroundImage: "url(https://images.pexels.com/photos/1764436/pexels-photo-1764436.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
@@ -86,12 +88,19 @@ export default function AdminPage() {
       <br />
       <div className="row mb-5">
         <div className="pt-4 text-center">
-          <button
-            className="btn btn-primary w-50 "
-            onClick={() => onClickAddFunction()}
-          >
-            ADD SCHOOLS
-          </button>
+        <div class="container">
+            <div class="content">
+               <Button onClick={() => onClickAddFunction()}>
+                  <div class="content-overlay"></div>
+                  <img class="content-image" src="https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                  <div class="content-details">
+                     <h3 class="content-title">
+                        NEED TO ADD SCHOOL!
+                     </h3>
+                  </div>
+               </Button>
+            </div>
+         </div>
         </div>
       </div>
       <br />

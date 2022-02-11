@@ -34,9 +34,12 @@ export default function ViewSuggestion(props) {
   return (<div>
     <div className="container">
       <div className="row p-5">
-        <div className="h4 p-2">id: {data.id}</div>
-        <div className=" h4 p-2">name : {data.name}</div>
-        <div className="h4 p-2">about : {data.about}</div>
+        <div className="h4 p-2">ID: {data.id}</div>
+        <div className=" h4 p-2">NAME: {data.name}</div>
+        <div className="h4 p-2">SCHOOL NAME:{data.schoolName}</div>
+        <div className="h4 p-2">SCHOOL ADDRESS:{data.schoolAddress}</div>
+        <div className="h4 p-2">SCHOOL EMAIL ID:{data.email}</div>
+        <div className="h4 p-2">ABOUT : {data.about}</div>
         </div>
         </div>
         </div>

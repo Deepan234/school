@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../Layout/NavBar';
 import { Container } from '@material-ui/core';
 import HOC from './HOC';
-
+import { Button } from '@material-ui/core';
 
 class SuggestionUserPage extends Component {
 
@@ -11,7 +11,7 @@ class SuggestionUserPage extends Component {
         return (<div>
             <NavBar />
             <Container maxWidth="lg" style={{
-                backgroundImage: "url(https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmVzc2lvbmFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60)",
+                backgroundImage: "url(https://cdn.pixabay.com/photo/2017/10/21/16/23/book-2875123_1280.jpg)",
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
@@ -20,12 +20,19 @@ class SuggestionUserPage extends Component {
                 <br />
                 <div className="row mb-5">
                     <div className="pt-4 text-center">
-                        <button
-                            className="btn btn-primary w-50 "
-                            onClick={() => this.props.onClickAddFunction()}
-                        >
-                            ADD SUGGESTION
-                        </button>
+                        <div class="container">
+                            <div class="content">
+                                <Button onClick={() => this.props.onClickAddFunction()}>
+                                    <div class="content-overlay"></div>
+                                    <img class="content-image" src="https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                                    <div class="content-details">
+                                        <h3 class="content-title">
+                                            NEED TO GIVE SUGGESTION!
+                                        </h3>
+                                    </div>
+                                </Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br />

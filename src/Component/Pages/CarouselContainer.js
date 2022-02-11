@@ -15,7 +15,7 @@ const CarouselContainer = () => {
       <Carousel.Item interval={2000} style={{'height':"300px",borderRadius:"12px"}}>
         <img style={{'height':"300px",borderRadius:"25px"}}
           className="d-block w-100"
-          src={"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZWR1Y2F0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"}
+          src={"https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-school-season-welcome-new-students-blackboard-hand-painted-image_12937.jpg"}
           alt="Third slide"
         />
         
@@ -24,7 +24,7 @@ const CarouselContainer = () => {
         <img
            style={{'height':"300px",borderRadius:"25px"}}
           className="d-block w-100"
-          src={"https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWR1Y2F0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"}
+          src={"https://www.thebalancecareers.com/thmb/hOSTPGdYulshro7AqttFK2wlT_Q=/3864x2173/smart/filters:no_upscale()/school-books-on-desk--education-concept-871454068-5b548900c9e77c005b04fc8c.jpg"}
           alt="Third slide"
         />
       </Carousel.Item>

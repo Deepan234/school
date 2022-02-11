@@ -4,6 +4,7 @@ import { addSchool } from '../../Action/SchoolAction';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { addSuggestion } from '../../Action/SchoolAction';
+import { Container } from '@material-ui/core';
 
 export default function AddSuggestionPage(props) {
 
@@ -29,7 +30,9 @@ export default function AddSuggestionPage(props) {
         await axios.post("http://localhost:8777/suggestion/addSuggestions",state).then((result) => dispatch(addSuggestion(result.data)));
     }
 
-  return (<div className="container">
+  return (
+  <Container>
+  <div className="container">
   <div className="row">
     <form>
       <div className="mb-3">
@@ -152,5 +155,6 @@ export default function AddSuggestionPage(props) {
       </div>
     </form>
   </div>
-</div>);
+</div>
+</Container>);
 }
