@@ -54,7 +54,7 @@ export default function UpdatePage(props) {
     await axios
       .put(`http://localhost:8777/school/updateschool`, state)
       .catch((err) => {
-        console.log("Error ", err);
+        alert(err.response.data);
       })
     dispatch(updateSchool(state));
   };

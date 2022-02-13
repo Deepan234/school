@@ -88,7 +88,6 @@ import HOC from './HOC';
                 <br />
                 <br />
             </Container>
-            
         </div>)
   }
 }

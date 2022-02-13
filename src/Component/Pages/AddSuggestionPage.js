@@ -27,7 +27,7 @@ export default function AddSuggestionPage(props) {
 
     const AddSchool = async() =>{
         console.log(state);
-        await axios.post("http://localhost:8777/suggestion/addSuggestions",state).then((result) => dispatch(addSuggestion(result.data)));
+        await axios.post("http://localhost:8777/suggestion/addSuggestions",state).then((result) => dispatch(addSuggestion(result.data))).catch((error)=>alert(error.response.data));
     }
 
   return (
@@ -148,6 +148,7 @@ export default function AddSuggestionPage(props) {
           className="btn btn-secondary ms-5 w-25"
           onClick={() => {
             props.setModalOpen(false);
+           
           }}
         >
           Cancel

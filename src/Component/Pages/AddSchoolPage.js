@@ -27,7 +27,7 @@ export default function AddSchoolPage(props) {
 
     const AddSchool = async() =>{
         console.log(state);
-        await axios.post("http://localhost:8777/school/addschool",state).then((result) => dispatch(addSchool(result.data)));
+        await axios.post("http://localhost:8777/school/addschool",state).then((result) => dispatch(addSchool(result.data))).catch((error)=>alert(error.response.data));
     }
 
   return (<div className="container">
