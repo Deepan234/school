@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState} from 'react';
-import { addSchool } from '../../Action/SchoolAction';
+import { addSchoolData } from '../../Action/SchoolAction';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -27,7 +27,7 @@ export default function AddSchoolPage(props) {
 
     const AddSchool = async() =>{
         console.log(state);
-        await axios.post("http://localhost:8777/school/addschool",state).then((result) => dispatch(addSchool(result.data))).catch((error)=>alert(error.response.data));
+        dispatch(addSchoolData(state));
     }
 
   return (<div className="container">

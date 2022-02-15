@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useState } from 'react';
-import {useDispatch} from 'react-redux';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { Container } from '@material-ui/core';
 import NavBar from '../Layout/NavBar';
-import { getAllSchool } from '../../Action/SchoolAction';
+import { fetchingDataList } from '../../Action/SchoolAction';
 import Modal from '../../CustomModal/Modal';
 
 export default function SchoolListing() {
 
-    const dispatch = useDispatch();
 
     const [element, setElement] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
@@ -19,21 +17,14 @@ export default function SchoolListing() {
 
     const school = useSelector((state)=>state.AllSchools.school);
 
+    console.log(school);
+
     const[data,setData] = useState(school);
 
-     const fetchingDataList = async() => {
-         const result = await axios.get("http://localhost:8777/school/getallschool");
-         dispatch(getAllSchool(result.data));
-         console.log(result.data);
-         setData(result.data);
 
-     }
-
-     useEffect(() => {
-        fetchingDataList();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []
-     )
+     useLayoutEffect(() => {
+        setData(school);
+      }, [])
 
 
      const onClickViewFunction = (id) => {

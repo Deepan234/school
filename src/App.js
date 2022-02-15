@@ -7,10 +7,12 @@ import Footer from './Component/Layout/Footer';
 
 function App() {
   return (
+    <div>
     <Provider store={Store()}>
        <Routers/>
        <Footer/>
     </Provider>
+    </div>
   );
 }
 

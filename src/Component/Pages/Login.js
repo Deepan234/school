@@ -29,11 +29,15 @@ import {loginAccount} from '../../Action/SchoolAction'
     
 
     updateValidators = (fieldName, value) => {
+        console.log(fieldName,value);
         this.validators[fieldName].errors = [];
         this.validators[fieldName].state = value;
         this.validators[fieldName].valid = true;
         this.validators[fieldName].rules.forEach((rule) => {
+            console.log(rule.test);
+            console.log(rule.test instanceof RegExp); 
             if (rule.test instanceof RegExp) {
+                console.log(!rule.test.test(value)); 
                 if (!rule.test.test(value)) {
                     this.validators[fieldName].errors.push(rule.message);
                     this.validators[fieldName].valid = false;
@@ -45,9 +49,11 @@ import {loginAccount} from '../../Action/SchoolAction'
                 }
             }
         });
+        console.log(this.validators[fieldName].valid)
     }
 
     resetValidators = () => {
+        console.log(this.validators);
         Object.keys(this.validators).forEach((fieldName) => {
             this.validators[fieldName].errors = [];
             this.validators[fieldName].state = '';
@@ -74,8 +80,11 @@ import {loginAccount} from '../../Action/SchoolAction'
     isFormValid = () => {
         let status = true;
         Object.keys(this.validators).forEach((field) => {
+            console.log(field);
+            console.log(!this.validators[field].valid);
             if (!this.validators[field].valid) {
                 status = false;
+                console.log(status);
             }
         });
         return status;
@@ -116,17 +125,17 @@ import {loginAccount} from '../../Action/SchoolAction'
                         <h3>LOG IN</h3>
                         <div className="form-group">
                             <label>USERNAME</label>
-                            <input type="text" className="form-control" placeholder="Enter UserName" name="userName" onChange={(event) => this.handleChange(event)} />
+                            <input type="text" id="user-name" className="form-control" placeholder="Enter UserName" name="userName" onChange={(event) => this.handleChange(event)} />
                         </div>
                         {this.displayValidationErrors('userName')}
                         <div className="form-group">
                             <label>PASSWORD</label>
-                            <input type="password" className="form-control" placeholder="Enter Password" name="password" onChange={(event)=> this.handleChange(event)} />
+                            <input type="password" id="password" className="form-control" placeholder="Enter Password" name="password" onChange={(event)=> this.handleChange(event)} />
                         </div>
                         {this.displayValidationErrors('password')}
                         <br/>
                         
-                        <button className={`btn btn-secondary btn-lg btn-block ${this.isFormValid() ? '' : 'disabled'}`} onClick={(event) => {
+                        <button id="submit-button" className={`btn btn-secondary btn-lg btn-block ${this.isFormValid() ? '' : 'disabled'}`} onClick={(event) => {
                             this.checkLogin();
                             event.preventDefault();
                         }}

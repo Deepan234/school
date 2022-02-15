@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Footer from '../Component/Layout/Footer';
 import AddSearchPage from '../Component/Pages/AddSearchPage';
@@ -11,11 +11,17 @@ import EnhancedUserSuggestionPage from '../Component/Pages/SuggestionUserPage';
 import { EnhancedWelcome } from '../Component/Pages/Welcome';
 import WelcomeAdminPage from '../Component/Pages/WelcomeAdminPage';
 import PrivateRoute from './PrivateRoute';
-
-
+import { useDispatch } from 'react-redux';
+import { fetchingDataList } from '../Action/SchoolAction';
 
 
 export default function Routers() {
+
+  const dispatch = useDispatch();
+  useEffect(()=>{
+  dispatch(fetchingDataList());
+  },[dispatch]);
+
   return(
    <div>
     <BrowserRouter>

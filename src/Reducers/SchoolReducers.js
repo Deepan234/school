@@ -18,7 +18,7 @@ const SchoolReducers = (state = initialState, action) => {
     console.log(ActionTypes.INDUIVAL_SCHOOLS === action.type)
     switch (action.type) {
         case ActionTypes.GET_SCHOOLS:
-
+             console.log(action.payload);
             newState.school = action.payload;
 
             break;

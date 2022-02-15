@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState} from 'react';
-import { addSchool } from '../../Action/SchoolAction';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
-import { addSuggestion } from '../../Action/SchoolAction';
+import { addSuggestionData } from '../../Action/SchoolAction';
 import { Container } from '@material-ui/core';
 
 export default function AddSuggestionPage(props) {
@@ -25,10 +23,10 @@ export default function AddSuggestionPage(props) {
 
     const dispatch = useDispatch(); 
 
-    const AddSchool = async() =>{
+    const addSuggestion = async() =>{
         console.log(state);
-        await axios.post("http://localhost:8777/suggestion/addSuggestions",state).then((result) => dispatch(addSuggestion(result.data))).catch((error)=>alert(error.response.data));
-    }
+        dispatch(addSuggestionData(state));  
+      }
 
   return (
   <Container>
@@ -139,7 +137,7 @@ export default function AddSuggestionPage(props) {
         <button
           className="btn btn-primary  w-25"
           onClick={(event) => {
-            AddSchool();
+            addSuggestion();
           }}
         >
           Submit

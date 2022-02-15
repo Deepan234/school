@@ -1,14 +1,32 @@
 import React from 'react';
 import { ActionTypes } from './ActionTypes';
-
+import axios from 'axios';
 
 export const getAllSchool = (school) => {
-
+    console.log(school);
     return{
          type:ActionTypes.GET_SCHOOLS,
          payload:school
     }
  
+};
+
+export const fetchingDataList = () => async(dispatch) => {
+    const result = await axios.get("http://localhost:8777/school/getallschool");
+    dispatch(getAllSchool(result.data));
+    console.log(result.data);
+};
+
+export const addSchoolData = (data) => {
+    return(dispatch) => {
+     axios.post("http://localhost:8777/school/addschool",data).then((result) => dispatch(addSchool(result.data))).catch((error)=>alert(error.response.data));
+    };
+};
+
+export const addSuggestionData = (data) => {
+    return(dispatch) => {
+       axios.post("http://localhost:8777/suggestion/addSuggestions",data).then((result) => dispatch(addSuggestion(result.data))).catch((error)=>alert(error.response.data));
+    };
 };
 
 export const getSchool = (schools) => {
