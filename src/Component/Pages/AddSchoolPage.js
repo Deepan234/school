@@ -3,6 +3,7 @@ import { useState} from 'react';
 import { addSchoolData } from '../../Action/SchoolAction';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 export default function AddSchoolPage(props) {
 
@@ -158,19 +159,12 @@ export default function AddSchoolPage(props) {
       <div className="text-center">
         <button
           className="btn btn-primary  w-25"
+          id="submit-btn"
           onClick={(event) => {
             AddSchool();
           }}
         >
           Submit
-        </button>
-        <button
-          className="btn btn-secondary ms-5 w-25"
-          onClick={() => {
-            props.setModalOpen(false);
-          }}
-        >
-          Cancel
         </button>
       </div>
     </form>

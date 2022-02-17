@@ -5,17 +5,20 @@ import Adapter from 'enzyme-adapter-react-16'
 import { Provider } from 'react-redux';
 import Store from './Store/Store'
 import { ExpansionPanelActions } from '@material-ui/core';
+import AddSchoolPage from './Component/Pages/AddSchoolPage';
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk';
 
 configure({adapter:new Adapter()});
 
+const mockstore = configureMockStore([thunk]);
+
 let store;
 let submitbutton;
-beforeEach(()=>{
+let addPage;
+test("Button Testing",()=>{
   store = Store();
   submitbutton = shallow(<Login store={store}/>).dive();
-});
-
-test("Button Testing",()=>{
   expect(submitbutton.find('#submit-button').text()).toBe('SUBMIT');
 });
 
@@ -43,8 +46,6 @@ test("render the active value of the button",(initialState={})=>{
   console.log(submitbutton.debug());
   expect(submitbutton.find('#submit-button').simulate('change').hasClass('btn btn-secondary btn-lg btn-block')).toBe(true);
 })
-
-
 
 
 

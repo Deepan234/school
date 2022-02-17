@@ -9,6 +9,7 @@ import CustomerValidation from './CustomerValidation';
 import {connect} from 'react-redux'
 import axios from "axios";
 import {loginAccount} from '../../Action/SchoolAction'
+import {withRouter} from 'react-router-dom'
 
  class Login extends Component{
     
@@ -107,6 +108,7 @@ import {loginAccount} from '../../Action/SchoolAction'
         if(result.data){
         this.props.login(result.data);
         this.setState({redirect:true});
+        this.props.history.push('/welcomeadmin');
         localStorage.setItem("isLoggedIn","true");
         localStorage.setItem("userName",this.state.login.userName);
         localStorage.setItem("password",this.state.login.password);
@@ -167,4 +169,4 @@ const mapDispatchToProps = dispatch => {
 
 
 
-export default  connect(null,mapDispatchToProps)(Login);
+export default  withRouter(connect(null,mapDispatchToProps)(Login));
